@@ -14,8 +14,8 @@ db_name = 'stress_management'
 # Email configuration
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-smtp_username = 'feelfree4pm@gmail.com'  # Replace with your email
-smtp_password = 'nguf ympu ozpo hpjj'  # Replace with your email password
+smtp_username = ''  # Replace with your email
+smtp_password = ''  # Replace with your email password
 
 # File to store the last processed ID
 last_processed_id_file = 'last_processed_id.txt'
