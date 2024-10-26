@@ -1,0 +1,116 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f7ff; /* Light blue background for calmness */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styles */
+.container {
+    position: relative; /* Necessary for the pseudo-element */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Fixed width for the form */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out; /* Smooth shadow transition */
+}
+
+.container:hover {
+    /* Hover effects */
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+}
+
+/* RGB running around the corner animation */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right,rgba(255, 0, 0, 0), rgba(255, 0, 0, 1), rgba(0, 255, 0, 1), rgba(0, 255, 0, 0), rgba(0, 0, 255, 0), rgba(0, 0, 255, 1), rgba(255, 0, 0, 1));
+    background-size: 400% 400%;
+    animation: rgb-animation 10s infinite linear;
+    opacity: 0.2; /* Adjust opacity as needed */
+    z-index: 1; /* Ensure it’s below the content */
+    pointer-events: none; /* Prevent blocking clicks */
+}
+
+@keyframes rgb-animation {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Heading styles */
+h2 {
+    text-align: center;
+    color: #007acc; /* Calming blue color for headings */
+    margin-bottom: 15px;
+}
+
+/* Input styles */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #007acc; /* Matching border color */
+    border-radius: 5px;
+    font-size: 16px; /* Slightly larger font size for better readability */
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+input:focus, select:focus {
+    border-color: #005f99; /* Darker blue on focus for better visibility */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007acc; /* Calm blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: #005f99; /* Darker shade on hover */
+}
+
+/* Additional styles for links */
+a {
+    text-decoration: none; /* Remove underline */
+    color: #007acc; /* Calming blue for links */
+    display: block; /* Make links block elements */
+    text-align: center; /* Center align text */
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+    .container {
+        width: 90%; /* Full width on smaller screens */
+    }
+}

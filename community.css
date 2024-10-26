@@ -1,0 +1,589 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('backgroung.jpg'); /* Update with your image path */
+    background-size: cover; /* Makes the image cover the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background steady */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, rgba(40, 53, 147, 0.8), rgba(63, 81, 181, 0.8)); /* Gradient background */
+    color: #fff;
+    padding: 10px; /* Increased padding for a more spacious look */
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for more depth */
+    transition: background 0.3s ease; /* Smooth transition for background change */
+}
+
+header:hover {
+    background: linear-gradient(135deg, rgba(63, 81, 181, 0.8), rgba(40, 53, 147, 0.8)); /* Reverse gradient on hover */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space between left and right items */
+    align-items: center;
+    padding: 10px 20px; /* More padding for balance */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Increased gap for better spacing */
+}
+
+nav ul li {
+    list-style: none;
+    position: relative; /* Required for dropdown positioning */
+}
+
+nav a {
+    color: #fff;
+    font-size: 1.2em; /* Slightly larger font size */
+    font-weight: 600;
+    padding: 10px 20px; /* Increased padding for buttons */
+    border-radius: 5px; /* Soft rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(53, 56, 75, 0.9); /* Semi-transparent background for dropdown */
+    min-width: 160px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    top: 100%; /* Positioning below the More button */
+    left: 0;
+    padding: 0;
+}
+
+/* Dropdown links */
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Make sure dropdown content disappears when not hovering */
+nav ul li:hover .dropdown-content {
+    display: block; /* Display the dropdown */
+}
+/* Main Layout */
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+/* Section Container */
+.welcome-container {
+    display: flex;
+    align-items: center;
+    padding: 3.5em; /* Increased padding for a more spacious feel */
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    border-radius: 40px; /* Soft rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for glass-like appearance */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 3em; /* Increased space between sections */
+    border: 2px solid rgba(0, 0, 0, 0.3); /* Elegant border for enhanced style */
+}
+
+.welcome-container:hover {
+    transform: translateY(-10px) scale(1.02); /* Slight enlargement on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Logo Styling - Aesthetic Rectangular Design */
+.welcome-container .logo {
+    flex-shrink: 0;
+    margin-right: 3.5em; /* Increased space for balance */
+}
+
+.welcome-container .logo img {
+    max-width: 400px; /* Increased max-width for better visual impact */
+    height: auto;
+    border-radius: 0 100px 0 100px; /* Softer corners */
+    border: 4px solid #000; /* Black border */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Stylish shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease; /* Transition for hover effects */
+    filter: grayscale(40%); /* Modern grayscale effect */
+}
+
+.welcome-container .logo img:hover {
+    transform: scale(1.15); /* Enlarged effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    filter: grayscale(0); /* Full color on hover */
+}
+
+/* Text Styling */
+h2 {
+    color: #1e1d1d; /* Always black heading */
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    font-size: 3.2em; /* Increased font size for impact */
+    text-shadow: none; /* No text shadow for clean look */
+    letter-spacing: 1.5px; /* Increased spacing between letters for a modern look */
+    transition: none; /* No transition or hover effect on color */
+}
+h3 {
+    color: #1e1d1d; /* Always black heading */
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    font-size: 2.2em; /* Increased font size for impact */
+    text-shadow: none; /* No text shadow for clean look */
+    letter-spacing: 1.5px; /* Increased spacing between letters for a modern look */
+    transition: none; /* No transition or hover effect on color */
+}
+.welcome-container p {
+    color: #000; /* Black text color */
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+    font-size: 1.4em; /* Larger font for readability */
+}
+
+/* Section Content */
+.info-content {
+    max-width: 750px; /* Increased max width for more spacious feel */
+}
+
+section {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 3.5em; /* Increased padding for spacious feel */
+    border-radius: 40px; /* Soft rounded corners */
+    backdrop-filter: blur(10px); /* Blur effect for glass-like appearance */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+    margin-bottom: 3em; /* Increased space between sections */
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Peer Support Communities */
+#peer {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque white for better contrast */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow effect for more depth */
+    padding: 30px; /* Increased inner spacing */
+    max-width: 600px; /* Maximum width */
+    margin: 2em auto; /* Centered on the page */
+    text-align: left; /* Align text to the left for readability */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+#peer:hover {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.reply-form {
+    margin-top: 20px; /* More space above the reply form */
+    padding: 20px; /* Padding for better spacing */
+    border: 1px solid #ccc; /* Border for the reply box */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+}
+
+.reply-form:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow on hover for the reply form */
+}
+
+.reply-form label {
+    display: block; /* Display label as block for better spacing */
+    margin-bottom: 10px; /* More space below label */
+    font-weight: bold; /* Bold labels */
+    color: #333; /* Darker color for better readability */
+}
+
+.reply-form textarea {
+    width: 100%; /* Full width for the textarea */
+    height: 80px; /* Increased height for the textarea */
+    padding: 12px; /* Padding inside the textarea */
+    border: 1px solid #ccc; /* Border for the textarea */
+    border-radius: 5px; /* Rounded corners */
+    resize: none; /* Disable resizing */
+    box-sizing: border-box; /* Include padding and border in total width */
+    transition: border-color 0.3s ease; /* Transition for border color */
+}
+
+.reply-form textarea:focus {
+    border-color: #007BFF; /* Change border color on focus */
+}
+
+.reply-form input[type="submit"] {
+    margin-top: 15px; /* Space above the submit button */
+    padding: 12px 18px; /* Increased padding for the button */
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Font size for button text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.reply-form input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.reply {
+    margin-left: 20px; /* Indent replies */
+    background-color: #f0f0f0; /* Light background for replies */
+    padding: 12px; /* Padding for replies */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border for replies */
+    margin-top: 15px; /* Space above replies */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.reply:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+}
+
+.reply-content {
+    margin: 0; /* Reset margin for reply content */
+    font-size: 1em; /* Base font size for reply text */
+    color: #333; /* Darker text color for readability */
+}
+
+.reply small {
+    display: block; /* Display date/time on new line */
+    color: #555; /* Lighter color for metadata */
+    font-size: 0.85em; /* Smaller font for metadata */
+}
+
+/* Align heading to the left */
+.h2h {
+    color: #283593; /* Dark blue color for headings */
+    margin-bottom: 20px; /* Space below heading */
+    text-align: left; /* Align to the left */
+}
+
+/* Align subheading to the left */
+.h3h {
+    margin-bottom: 15px; /* Space below questions heading */
+    text-align: left; /* Align to the left */
+}
+
+
+
+/* Styles for the ordered list */
+olist {
+    list-style-type: none; /* Remove default numbering */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Style for each question */
+ques {
+    background: rgba(232, 240, 254, 0.9); /* Light blue background for each question */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    margin-bottom: 15px; /* Space between questions */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between question text and options */
+    align-items: center; /* Center align items vertically */
+}
+
+/* Radio button styles */
+input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and text */
+    accent-color: #283593; /* Color for the radio button */
+}
+
+/* Community Section Styles */
+#community {
+    background-color: #f9f9f9; /* Light background for the community section */
+    padding: 20px; /* Padding for the section */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Spacing from other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+/* Community Section Container */
+.community-container {
+    padding: 3.5em; /* Spacing for the community section */
+    background: rgba(154, 246, 238, 0.85); /* Slightly opaque background */
+    border-radius: 40px; /* Soft rounded corners */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transition effects */
+    margin-bottom: 3em; /* Increased space between sections */
+}
+
+/* Hover effect for community container */
+.community-container:hover {
+    animation: communityHoverEffect 5s forwards; /* Start the animation on hover */
+}
+
+/* Keyframes for community section hover effect */
+@keyframes communityHoverEffect {
+    0% {
+        transform: translateY(0); /* Start position */
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02); /* Move up slightly */
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+        background: rgba(178, 235, 242, 0.95); /* Change background on hover */
+    }
+    100% {
+        transform: translateY(0); /* Return to original position */
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2); /* Return to original shadow */
+        background: rgba(154, 246, 238, 0.85); /* Return to original background */
+    }
+}
+
+/* Reset some default styles for consistency */
+body, h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Use a clean font */
+    background-color: #f0f4f8; /* Light gray background */
+    color: #37474f; /* Dark gray text */
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #00796b; /* Rich teal color */
+    color: #fff; /* White text */
+    padding: 15px 20px; /* Padding around the header */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space out nav items */
+    align-items: center; /* Center items vertically */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Display list items in a row */
+    gap: 15px; /* Space between items */
+}
+
+nav a {
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline */
+    padding: 8px 15px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px; /* Padding for main content */
+}
+
+.community-container {
+    max-width: 800px; /* Limit width of community section */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Text Styling */
+.community-container h2 {
+    color: #00796b; /* Rich teal color */
+    font-weight: bold;
+    font-size: 2.5em; /* Font size for headings */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Stronger text shadow */
+    letter-spacing: 1.5px; /* Increased spacing between letters */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.community-container h3 {
+    color: #00796b; /* Rich teal color */
+    font-weight: bold;
+    font-size: 2em; /* Font size for subheadings */
+    margin-bottom: 1em; /* Space below subheading */
+}
+
+.community-container p {
+    line-height: 1.8; /* Improved line height for readability */
+    font-size: 1.2em; /* Font size for paragraphs */
+}
+
+/* Post Styling */
+.post {
+    background-color: #ffffff; /* White background for each post */
+    padding: 20px; /* Padding for posts */
+    margin: 20px 0; /* Spacing between posts */
+    border-radius: 8px; /* Rounded corners for posts */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    transition: box-shadow 0.3s; /* Smooth shadow transition */
+}
+
+.post:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow on hover for effect */
+}
+
+.post h4 {
+    margin-bottom: 10px; /* Space below title */
+    font-size: 1.5em; /* Larger heading size for post titles */
+    color: #00796b; /* Rich teal color for titles */
+}
+
+.post small {
+    color: #777; /* Gray color for posted by info */
+    display: block; /* Make it a block element for better alignment */
+    margin-top: 10px; /* Space above the posted info */
+}
+
+/* Form Styling */
+.post-form {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    gap: 15px; /* Space between elements */
+    margin-bottom: 20px; /* Spacing below the form */
+}
+
+.post-form label {
+    font-weight: bold; /* Bold labels for better visibility */
+}
+
+.post-form input[type="text"],
+.post-form textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 15px; /* Padding for inputs */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-sizing: border-box; /* Include padding and border in total width */
+    font-size: 1em; /* Base font size */
+}
+
+.post-form textarea {
+    height: 100px; /* Adjust height for the content box */
+    resize: none; /* Disable resizing */
+}
+
+/* Button Styling */
+.post-form .submit-button {
+    background-color: #4CAF50; /* Green button color */
+    color: #fff; /* White text color */
+    padding: 12px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition effect */
+    font-size: 1.1em; /* Font size for buttons */
+}
+
+.post-form .submit-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Message Styling */
+.success-message {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 5px;
+}
+
+.error-message {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #f5c6cb; /* Red border */
+    border-radius: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 1.1em; /* Adjust font size for smaller screens */
+        padding: 8px 15px; /* Adjust padding */
+    }
+
+    main {
+        padding: 1em; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items on small screens */
+    }
+    .reply-form {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}

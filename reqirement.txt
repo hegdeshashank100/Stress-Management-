@@ -1,0 +1,9 @@
+Python 
+Flask
+google.generativeai
+mysql.connector
+smtplib
+email.mime.multipart
+email.mime.text
+time
+os

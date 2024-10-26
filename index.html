@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles for the chat interface */
+        #chat-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 5px;
+            display: none; /* Initially hidden */
+        }
+        #chat-log {
+            height: 200px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        #user-input-chat {
+            width: 100%;
+            padding: 10px;
+        }
+        #send-btn {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to Mental Health Support</h1>
+            <p>Our mission is to provide a safe and supportive community for young people to prioritize their mental well-being.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a team of passionate individuals dedicated to creating a stigma-free space for mental health support.</p>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="#">Mental Health Articles</a></li>
+                <li><a href="#">Self-Care Tips</a></li>
+                <li><a href="#">Professional Help</a></li>
+            </ul>
+        </section>
+
+        <section id="support">
+            <h2>Support</h2>
+            <p>Connect with our community and get support from Artificial Intelligence.</p>
+            <button id="chat-btn">Start Chat</button>
+        </section>
+      
+
+        <div id="tracker">
+            <h2>Emotional Health Tracker</h2>
+            <input id="user-input" type="text" placeholder="Enter your emotions">
+            <button id="track-btn">Track</button>
+            <div id="ai-response"></div>
+        </div>
+
+        
+    </main>
+    <script src="script.js"></script>
+    
+</body>
+</html>
