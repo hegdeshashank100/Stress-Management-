@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(40, 53, 147, 0.8); /* Semi-transparent header */
+    color: #fff;
+    padding: 0.5em 0; /* Adjust padding to your preference */
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove any potential margin */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space between left and right items */
+    align-items: center;
+    padding: 10px 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #35384b;
+    border-radius: 5px;
+}
+
+/* Result container styles */
+.result-container {
+    max-width: 600px;
+    margin: 100px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Score display styles */
+.score-animation {
+    font-size: 3em;
+    color: #3b8ed3;
+    margin: 20px 0;
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+/* Score message styles */
+.score-message {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+/* Button styles */
+button {
+    background-color: #3b8ed3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3191c7;
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

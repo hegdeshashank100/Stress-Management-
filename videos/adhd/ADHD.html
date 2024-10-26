@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Playlist with Thumbnails</title>
+    <link rel="stylesheet" href="ADHD.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.php">Home</a>
+            <a href="../../playlist.php">Back</a>
+        </nav>
+    </header>
+    <h1>ADHD Relief Videos</h1>
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source id="videoSource" src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="thumbnails">
+        <div class="thumbnail" onclick="changeVideo('video1.mp4')">
+            <img src="img1.jpg" alt="By Yoga">
+            <div class="overlay">How to Treat ADHD [Without Medication]</div>
+        </div>
+        <div class="thumbnail" onclick="changeVideo('video2.mp4')">
+            <img src="img2.jpg" alt="Video 2">
+            <div class="overlay">Effective hacks to cure ADHD</div>
+        </div>
+        <div class="thumbnail" onclick="changeVideo('video3.mp4')">
+            <img src="img3.jpg" alt="Video 3">
+            <div class="overlay">How to stay focused and motivated (fighting ADHD)</div>
+        </div>
+        <div class="thumbnail" onclick="changeVideo('video4.mp4')">
+            <img src="img4.jpg" alt="Video 4">
+            <div class="overlay">How to treat ADHD naturally?</div>
+        </div>
+        <div class="thumbnail" onclick="changeVideo('video5.mp4')">
+            <img src="img5.jpg" alt="Video 5">
+            <div class="overlay">The ADHD dopamine solution</div>
+        </div>
+        <div class="thumbnail" onclick="changeVideo('video6.mp4')">
+            <img src="img6.jpg" alt="Video 6">
+            <div class="overlay">Managing and reducing Symptoms of ADHD</div>
+        </div>
+    </div>
+
+    <script>
+        function changeVideo(videoPath) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            const videoSource = document.getElementById('videoSource');
+            videoSource.src = videoPath;
+            videoPlayer.load();
+            videoPlayer.play();
+        }
+
+        const videoPlayer = document.getElementById('videoPlayer');
+        videoPlayer.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+            const speed = prompt("Enter playback speed (e.g., 1 for normal, 1.5 for 1.5x):", "1");
+            if (speed) {
+                videoPlayer.playbackRate = parseFloat(speed);
+            }
+        });
+    </script>
+
+</body>
+</html>

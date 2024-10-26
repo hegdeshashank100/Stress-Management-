@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anxiety Test Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<header>
+    <nav>
+        <a href="../../index.php">Home</a>
+        <a href="../../healthtest.php">Back</a>
+    </nav>
+</header>
+<body>
+    <div class="results-container">
+        <h2>Your Stress Score</h2>
+        <canvas id="stressResult" width="400" height="400"></canvas>
+        <p>Your score is: <strong id="score"></strong></p>
+        <p>Based on your score, consider seeking further evaluation.</p>
+    </div>
+
+    <script>
+        const score = localStorage.getItem("stressScore");
+        document.getElementById("score").innerText = score;
+
+        var ctx = document.getElementById('stressResult').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Stress Level', 'Normal'],
+                datasets: [{
+                    label: 'Stress Score',
+                    data: [score, 50 - score],
+                    backgroundColor: ['#FF6384', '#36A2EB'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+    </script>
+</body>
+</html>
