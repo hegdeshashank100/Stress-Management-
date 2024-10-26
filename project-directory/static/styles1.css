@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('OIP.jpg'); /* Update with your image path */
+    background-size: cover; /* Makes the image cover the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background steady */
+}
+
+header {
+    background-color: rgba(74, 144, 226, 0.8); /* Semi-transparent header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-container {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the chat container */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-log {
+    border: 1px solid rgba(204, 204, 204, 0.5); /* Semi-transparent border */
+    border-radius: 5px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(249, 249, 249, 0.8); /* Semi-transparent background for chat log */
+}
+
+.chat-log ul {
+    list-style-type: none;
+}
+
+.chat-log li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-log li.user {
+    background-color: rgba(209, 231, 221, 0.8); /* Semi-transparent background for user messages */
+    text-align: right;
+}
+
+.chat-log li.ai {
+    background-color: rgba(207, 226, 255, 0.8); /* Semi-transparent background for AI messages */
+    text-align: left;
+}
+
+.input-container {
+    display: flex;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid rgba(204, 204, 204, 0.5); /* Semi-transparent border */
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+#user-input:focus {
+    border-color: #4A90E2;
+}
+
+#send-btn {
+    padding: 10px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#send-btn:hover {
+    background-color: #3A7BD5;
+}
